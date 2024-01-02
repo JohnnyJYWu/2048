@@ -1,6 +1,6 @@
 # This .gitignore file should be placed at the root of your Unity project directory
 #
-# Get latest from https://github.com/github/gitignore/blob/master/Unity.gitignore
+# Get latest from https://github.com/github/gitignore/blob/main/Unity.gitignore
 #
 /[Ll]ibrary/
 /[Tt]emp/
@@ -12,12 +12,14 @@
 
 /.idea/
 /.plastic/
-/android
-/android_BurstDebugInformation_DoNotShip
+/build
 
 # MemoryCaptures can get excessive in size.
 # They also could contain extremely sensitive data
 /[Mm]emoryCaptures/
+
+# Recordings can get excessive in size
+/[Rr]ecordings/
 
 # Asset meta data should only be ignored when the corresponding asset is also ignored
 !/[Aa]ssets/**/*.meta
@@ -64,6 +66,7 @@ sysinfo.txt
 *.apk
 *.aab
 *.unitypackage
+*.app
 
 # Crashlytics generated file
 crashlytics-build.properties
