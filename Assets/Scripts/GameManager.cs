@@ -90,6 +90,23 @@ public class GameManager : MonoBehaviour
         txtScore.text = score.ToString();
 
         SaveBestScore();
+        
+        if (Application.platform == RuntimePlatform.Android)
+        {
+            CallAndroid("unityToast", value);
+        }
+    }
+
+    private void CallAndroid(string methodName, params object[] args)
+    {
+        AndroidJavaClass jc = new AndroidJavaClass("com.unity3d.player.UnityPlayer");
+        AndroidJavaObject jo = jc.GetStatic<AndroidJavaObject>("currentActivity");
+        jo.Call(methodName, args);
+    }
+    
+    public void ReceiveMessage(string message)
+    {
+        print("ReceiveMessage: " + message + " from" + Application.platform);
     }
 
     private void SaveBestScore()
